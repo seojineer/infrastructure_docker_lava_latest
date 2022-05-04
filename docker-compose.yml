@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  lava-server:
+    build: .
+    image: seojikim/amd64-lava-server
+    container_name: lava-server
+    ports:
+      - "9090:80"
+      - "5500:5500"
+      - "5556:5556"
+    #volumes:
+    #networks:
+      #- my_net
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    privileged: true
+
+networks:
+  my_net:
+    external: true
