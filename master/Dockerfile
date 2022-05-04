@@ -7,5 +7,5 @@ RUN sed -i 's/ProxyPreserveHost On/ProxyPreserveHost Off/' /etc/apache2/sites-av
 RUN echo '"CSRF_COOKIE_SECURE": false' >> /etc/lava-server/settings.conf
 RUN echo '"SESSION_COOKIE_SECURE": false' >> /etc/lava-server/settings.conf
 
-COPY master/create_admin.sh /root/create_admin.sh
+COPY create_admin.sh /root/create_admin.sh
 #CMD /root/create_admin.sh
