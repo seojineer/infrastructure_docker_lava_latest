@@ -3,6 +3,7 @@ This repository is about Linaro LAVA docker running.
 1. LAVA master
 
 (1) Run docker container
+$ cd master
 $ docker-compose up -d
 
 (2) Create admin account
