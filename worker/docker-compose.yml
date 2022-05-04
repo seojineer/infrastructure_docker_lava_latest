@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  lava-dispatcher:
+    build: .
+    image: seojikim/amd64-lava-dispatcher
+    container_name: lava-dispatcher
+    ports:
+      #- "9090:80"
+      - "5555:5555"
+      - "5556:5556"
+    volumes:
+      - /boot:/boot
+      - /lib/modules:/lib/modules
+      - /dev/bus/usb:/dev/bus/usb
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    networks:
+      - my_net
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    privileged: true
+    environment:
+      - URL=http://10.157.133.51:9090
+      - LOGGER_URL=tcp://10.157.133.51:5557
+      - MASTER_URL=tcp://10.157.133.51:5558
+      - DISPATCHER_HOSTNAME=--hostname=lava-dispatcher
+    command: /sbin/init
+
+networks:
+  my_net:
+    external: true

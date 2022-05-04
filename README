@@ -11,3 +11,19 @@ $ docker exec lava-server /root/create_admin.sh
 or
 $ docker exec lava-server lava-server manage users add <admin_id> --passwd <password>
 $ docker exec lava-server lava-server manage authorize_superuser --username <admin_id>
+
+
+2. LAVA dispatcher
+
+(1) Run docker container
+$ cd worker
+$ docker-compose up -d
+
+(2) Change lava-worker configuration
+Modify /etc/lava-dispatcher/lava-worker in container.
+Or change local file and rebuild docker image.
+$ docker-compose build
+
+(3) Restart lava-worker service
+$ docker exec lava-dispatcher systemctl restart lava-worker
+

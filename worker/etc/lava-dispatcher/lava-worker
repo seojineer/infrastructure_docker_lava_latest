@@ -1,0 +1,16 @@
+# Configuration for lava-worker daemon
+
+# worker name
+# Should be set for host that have random hostname (containers, ...)
+# The name can be any unique string.
+WORKER_NAME="--name lava-dispatcher"
+
+# Logging level should be uppercase (DEBUG, INFO, WARN, ERROR)
+# LOGLEVEL="DEBUG"
+
+# Server connection
+URL="http://10.157.133.51:9090/"
+TOKEN="--token wgzYLau7aVvq5K7EcTBQIR5cncX5Tmgb"
+# WS_URL="--ws-url http://localhost/ws/"
+# HTTP_TIMEOUT="--http-timeout 600"
+# JOB_LOG_INTERVAL="--job-log-interval 5"
