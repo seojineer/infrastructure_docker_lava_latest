@@ -5,8 +5,8 @@ services:
     image: seojikim/amd64-lava-server
     container_name: lava-server
     ports:
-      - "9090:80"
-      #- "5555:5500"
+      - "80:80"
+      - "5500:5500"
       - "5557:5555"
       - "5558:5556"
     #volumes:

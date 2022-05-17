@@ -19,7 +19,7 @@ services:
     tty: true        # docker run -t
     privileged: true
     environment:
-      - URL=http://10.157.133.51:9090
+      - URL=http://10.157.133.51
       - LOGGER_URL=tcp://10.157.133.51:5557
       - MASTER_URL=tcp://10.157.133.51:5558
       - DISPATCHER_HOSTNAME=--hostname=lava-dispatcher
