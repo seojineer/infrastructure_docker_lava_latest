@@ -1,8 +1,8 @@
 version: "3.9"
 services:
   lava-dispatcher:
-    build: .
-    image: seojikim/amd64-lava-dispatcher
+    #build: .
+    image: lavasoftware/amd64-lava-dispatcher
     container_name: lava-dispatcher
     ports:
       #- "9090:80"
@@ -23,7 +23,9 @@ services:
       - LOGGER_URL=tcp://10.157.133.51:5557
       - MASTER_URL=tcp://10.157.133.51:5558
       - DISPATCHER_HOSTNAME=--hostname=lava-dispatcher
-    command: /sbin/init
+      - WORKER_NAME=--name lava-dispatcher
+      - TOKEN=--token O206iu3A4QkxrGSqc0yxSWLYOaIH9t1P
+    #command: /sbin/init
 
 networks:
   my_net:
